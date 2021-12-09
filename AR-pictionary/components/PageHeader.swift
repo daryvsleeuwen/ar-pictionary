@@ -23,7 +23,7 @@ struct PageHeader: View {
                     Text("\(currentCoins)").font(Font.custom("AvenirNext-DemiBold", size: 17)).foregroundColor(.white)
                 }.padding(8).background(LinearGradient(gradient: Gradient(colors: [Color("pOrange"), Color("pRed")]), startPoint: .leading, endPoint: .trailing)).cornerRadius(12)
             }
-        }
+        }.padding(.bottom, 44)
     }
 }
 

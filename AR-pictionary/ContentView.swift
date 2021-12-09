@@ -6,10 +6,10 @@ struct ContentView: View {
     var body: some View {
         VStack{
             switch selectedNavPage {
-            case "home": HomePage()
+            case "home": HomePage(playerXP: 272)
             case "powerups": PowerupPage()
             case "account": AccountPage()
-            default: HomePage()
+            default: HomePage(playerXP: 272)
             }
             
             HStack(){
