@@ -2,9 +2,11 @@ import SwiftUI
 
 struct PowerupPage: View {
     var body: some View {
-        VStack{
-            Text("PowerupPage")
-        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+        VStack(alignment: .leading){
+            PageHeader(currentCoins: 136, playerLevel: 23)
+            Text("Powerup Winkel").font(Font.custom("Nexa-Bold", size: 32)).foregroundColor(Color("pBlack")).padding(.bottom, 30)
+            Spacer()
+        }.padding()
     }
 }
 
