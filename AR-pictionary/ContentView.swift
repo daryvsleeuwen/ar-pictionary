@@ -49,7 +49,7 @@ struct ContentView: View {
                 }
                 Spacer()
             }.padding().cornerRadius(18).background(LinearGradient(gradient: Gradient(colors: [Color("pOrange"), Color("pRed")]), startPoint: .leading, endPoint: .trailing)).ignoresSafeArea()
-        }.ignoresSafeArea()
+        }.ignoresSafeArea(edges: .bottom)
     }
 }
 

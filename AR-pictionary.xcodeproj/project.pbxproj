@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7271776F27626718007AAC4E /* PageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7271776E27626718007AAC4E /* PageHeader.swift */; };
 		727647DB2762080E004EB186 /* AR_pictionaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727647DA2762080E004EB186 /* AR_pictionaryApp.swift */; };
 		727647DD2762080E004EB186 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727647DC2762080E004EB186 /* ContentView.swift */; };
 		727647DF27620810004EB186 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 727647DE27620810004EB186 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7271776E27626718007AAC4E /* PageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageHeader.swift; sourceTree = "<group>"; };
 		727647D72762080E004EB186 /* AR-pictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR-pictionary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		727647DA2762080E004EB186 /* AR_pictionaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR_pictionaryApp.swift; sourceTree = "<group>"; };
 		727647DC2762080E004EB186 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +48,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7271776D276266FE007AAC4E /* components */ = {
+			isa = PBXGroup;
+			children = (
+				7271776E27626718007AAC4E /* PageHeader.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		727647CE2762080E004EB186 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +75,7 @@
 		727647D92762080E004EB186 /* AR-pictionary */ = {
 			isa = PBXGroup;
 			children = (
+				7271776D276266FE007AAC4E /* components */,
 				727647F1276231B2004EB186 /* pages */,
 				727647F027620CCC004EB186 /* Info.plist */,
 				727647E827620ADC004EB186 /* fonts */,
@@ -181,6 +192,7 @@
 				727647F3276231C7004EB186 /* HomePage.swift in Sources */,
 				727647DD2762080E004EB186 /* ContentView.swift in Sources */,
 				727647DB2762080E004EB186 /* AR_pictionaryApp.swift in Sources */,
+				7271776F27626718007AAC4E /* PageHeader.swift in Sources */,
 				727647F527623360004EB186 /* PowerupPage.swift in Sources */,
 				727647F7276233C1004EB186 /* AccountPage.swift in Sources */,
 			);

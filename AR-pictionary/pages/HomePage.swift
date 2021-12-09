@@ -3,8 +3,9 @@ import SwiftUI
 struct HomePage: View {
     var body: some View {
         VStack{
-            Text("HomePage")
-        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+            PageHeader(currentCoins: 136, playerLevel: 23)
+            Spacer()
+        }.frame(maxWidth: .infinity, maxHeight: .infinity).padding()
     }
 }
 
