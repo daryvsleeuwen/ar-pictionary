@@ -20,7 +20,7 @@ struct ContentView: View {
                             .scaledToFit()
                             .frame(width: 34, height: 34)
                         if selectedNavPage == "home" {
-                            Text("Home").font(.custom("NexaXBold", size: 16)).foregroundColor(.white)
+                            Text("Home").font(Font.custom("AvenirNext-Bold", size: 17)).foregroundColor(.white)
                         }
                     }
                 }
@@ -31,7 +31,7 @@ struct ContentView: View {
                             .scaledToFit()
                             .frame(width: 34, height: 34)
                         if selectedNavPage == "powerups" {
-                            Text("Powerups").font(.custom("NexaXBold", size: 16)).foregroundColor(.white)
+                            Text("Powerups").font(Font.custom("AvenirNext-Bold", size: 17)).foregroundColor(.white)
                         }
                     }
                 }
@@ -42,13 +42,13 @@ struct ContentView: View {
                             .scaledToFit()
                             .frame(width: 34, height: 34)
                         if selectedNavPage == "account" {
-                            Text("Account").font(.custom("NexaXBold", size: 16)).foregroundColor(.white)
+                            Text("Account").font(Font.custom("AvenirNext-Bold", size: 17)).foregroundColor(.white)
                         }
                     }
                     
                 }
                 Spacer()
-            }.padding(13).cornerRadius(18).background(LinearGradient(gradient: Gradient(colors: [Color("pOrange"), Color("pRed")]), startPoint: .leading, endPoint: .trailing)).ignoresSafeArea()
+            }.padding().cornerRadius(18).background(LinearGradient(gradient: Gradient(colors: [Color("pOrange"), Color("pRed")]), startPoint: .leading, endPoint: .trailing)).ignoresSafeArea()
         }.ignoresSafeArea()
     }
 }
