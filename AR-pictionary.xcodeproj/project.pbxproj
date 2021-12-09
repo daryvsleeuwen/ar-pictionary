@@ -11,6 +11,9 @@
 		727647DD2762080E004EB186 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727647DC2762080E004EB186 /* ContentView.swift */; };
 		727647DF27620810004EB186 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 727647DE27620810004EB186 /* Assets.xcassets */; };
 		727647E227620810004EB186 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 727647E127620810004EB186 /* Preview Assets.xcassets */; };
+		727647F3276231C7004EB186 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727647F2276231C7004EB186 /* HomePage.swift */; };
+		727647F527623360004EB186 /* PowerupPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727647F427623360004EB186 /* PowerupPage.swift */; };
+		727647F7276233C1004EB186 /* AccountPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727647F6276233C1004EB186 /* AccountPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		727647EE27620B2F004EB186 /* NexaRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NexaRegular.otf; sourceTree = "<group>"; };
 		727647EF27620B2F004EB186 /* NexaThin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NexaThin.otf; sourceTree = "<group>"; };
 		727647F027620CCC004EB186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		727647F2276231C7004EB186 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		727647F427623360004EB186 /* PowerupPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerupPage.swift; sourceTree = "<group>"; };
+		727647F6276233C1004EB186 /* AccountPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 		727647D92762080E004EB186 /* AR-pictionary */ = {
 			isa = PBXGroup;
 			children = (
+				727647F1276231B2004EB186 /* pages */,
 				727647F027620CCC004EB186 /* Info.plist */,
 				727647E827620ADC004EB186 /* fonts */,
 				727647DA2762080E004EB186 /* AR_pictionaryApp.swift */,
@@ -89,6 +96,16 @@
 				727647EB27620B2F004EB186 /* NexaXBold.otf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		727647F1276231B2004EB186 /* pages */ = {
+			isa = PBXGroup;
+			children = (
+				727647F2276231C7004EB186 /* HomePage.swift */,
+				727647F427623360004EB186 /* PowerupPage.swift */,
+				727647F6276233C1004EB186 /* AccountPage.swift */,
+			);
+			path = pages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,8 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				727647F3276231C7004EB186 /* HomePage.swift in Sources */,
 				727647DD2762080E004EB186 /* ContentView.swift in Sources */,
 				727647DB2762080E004EB186 /* AR_pictionaryApp.swift in Sources */,
+				727647F527623360004EB186 /* PowerupPage.swift in Sources */,
+				727647F7276233C1004EB186 /* AccountPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
