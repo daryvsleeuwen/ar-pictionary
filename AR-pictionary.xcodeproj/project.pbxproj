@@ -19,6 +19,14 @@
 		727647DC2762080E004EB186 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		727647DE27620810004EB186 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		727647E127620810004EB186 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		727647E927620B2F004EB186 /* NexaLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NexaLight.otf; sourceTree = "<group>"; };
+		727647EA27620B2F004EB186 /* NexaBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NexaBold.otf; sourceTree = "<group>"; };
+		727647EB27620B2F004EB186 /* NexaXBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NexaXBold.otf; sourceTree = "<group>"; };
+		727647EC27620B2F004EB186 /* NexaBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NexaBlack.otf; sourceTree = "<group>"; };
+		727647ED27620B2F004EB186 /* NexaBook.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NexaBook.otf; sourceTree = "<group>"; };
+		727647EE27620B2F004EB186 /* NexaRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NexaRegular.otf; sourceTree = "<group>"; };
+		727647EF27620B2F004EB186 /* NexaThin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NexaThin.otf; sourceTree = "<group>"; };
+		727647F027620CCC004EB186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,8 @@
 		727647D92762080E004EB186 /* AR-pictionary */ = {
 			isa = PBXGroup;
 			children = (
+				727647F027620CCC004EB186 /* Info.plist */,
+				727647E827620ADC004EB186 /* fonts */,
 				727647DA2762080E004EB186 /* AR_pictionaryApp.swift */,
 				727647DC2762080E004EB186 /* ContentView.swift */,
 				727647DE27620810004EB186 /* Assets.xcassets */,
@@ -65,6 +75,20 @@
 				727647E127620810004EB186 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		727647E827620ADC004EB186 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				727647EC27620B2F004EB186 /* NexaBlack.otf */,
+				727647EA27620B2F004EB186 /* NexaBold.otf */,
+				727647ED27620B2F004EB186 /* NexaBook.otf */,
+				727647E927620B2F004EB186 /* NexaLight.otf */,
+				727647EE27620B2F004EB186 /* NexaRegular.otf */,
+				727647EF27620B2F004EB186 /* NexaThin.otf */,
+				727647EB27620B2F004EB186 /* NexaXBold.otf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +295,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"AR-pictionary/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AR-pictionary/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -300,6 +325,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"AR-pictionary/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AR-pictionary/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
