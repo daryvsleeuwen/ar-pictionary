@@ -17,6 +17,7 @@
 		727647F527623360004EB186 /* PowerupPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727647F427623360004EB186 /* PowerupPage.swift */; };
 		727647F7276233C1004EB186 /* AccountPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727647F6276233C1004EB186 /* AccountPage.swift */; };
 		72D0A62F276665AD00301544 /* CText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D0A62E276665AD00301544 /* CText.swift */; };
+		72D0A63127666CD000301544 /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D0A63027666CD000301544 /* BackgroundGradient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		727647F427623360004EB186 /* PowerupPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerupPage.swift; sourceTree = "<group>"; };
 		727647F6276233C1004EB186 /* AccountPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPage.swift; sourceTree = "<group>"; };
 		72D0A62E276665AD00301544 /* CText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CText.swift; sourceTree = "<group>"; };
+		72D0A63027666CD000301544 /* BackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				72D0A62E276665AD00301544 /* CText.swift */,
+				72D0A63027666CD000301544 /* BackgroundGradient.swift */,
 			);
 			path = styling;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			files = (
 				727647F3276231C7004EB186 /* HomePage.swift in Sources */,
 				727647DD2762080E004EB186 /* ContentView.swift in Sources */,
+				72D0A63127666CD000301544 /* BackgroundGradient.swift in Sources */,
 				727647DB2762080E004EB186 /* AR_pictionaryApp.swift in Sources */,
 				7271776F27626718007AAC4E /* PageHeader.swift in Sources */,
 				727647F527623360004EB186 /* PowerupPage.swift in Sources */,

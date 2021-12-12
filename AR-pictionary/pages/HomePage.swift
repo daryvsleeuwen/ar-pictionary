@@ -9,7 +9,7 @@ struct HomePage: View {
         VStack(alignment: .leading){
             PageHeader(currentCoins: 136, playerLevel: 23)
             VStack{
-                CText(text: "Je bent bijna level 24!" , font: "XBold", size: 2, color: "pWhite").padding(.bottom, 15)
+                CText(text: "Je bent bijna level 24!" , font: "XBold", size: 22, color: "pWhite").padding(.bottom, 15)
                 Circle()
                     .trim(from: 0, to: 1)
                     .fill(.white)
@@ -31,12 +31,12 @@ struct HomePage: View {
                 }).padding().frame(maxWidth: .infinity).background(Color.white).cornerRadius(12)
             }.frame(
                 maxWidth: .infinity
-            ).padding(20).background(LinearGradient(gradient: Gradient(colors: [Color("pOrange"), Color("pRed")]), startPoint: .leading, endPoint: .trailing)).cornerRadius(18).padding(.bottom, 30)
+            ).padding(20).background(BackgroundGradient).cornerRadius(18).padding(.bottom, 30)
             CText(text: "Dagelijkse Challenges" , font: "Bold", size: 22, color: "pBlack").padding(.bottom, 10)
             ScrollView(.horizontal) {
                 HStack{
                     ForEach(DailyChallenges) {challenge in
-                        Rectangle().fill(LinearGradient(gradient: Gradient(colors: [Color("pOrange"), Color("pRed")]), startPoint: .leading, endPoint: .trailing)).cornerRadius(18).frame(
+                        Rectangle().fill(BackgroundGradient).cornerRadius(18).frame(
                             width: 215,
                             height: 112
                         ).overlay(
