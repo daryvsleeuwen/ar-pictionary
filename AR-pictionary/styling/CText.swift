@@ -5,9 +5,10 @@ struct CText: View {
     var font: String = "Bold"
     var size: CGFloat = 18
     var color: String = "pBlack"
+    var alignment: TextAlignment = .leading
     
     var body: some View {
-        Text(text).font(Font.custom("Nexa-\(font)", size: size)).foregroundColor(Color(color))
+        Text(text).font(Font.custom("Nexa-\(font)", size: size)).foregroundColor(Color(color)).multilineTextAlignment(alignment)
     }
 }
 
