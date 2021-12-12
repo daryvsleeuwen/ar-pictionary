@@ -16,6 +16,7 @@
 		727647F3276231C7004EB186 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727647F2276231C7004EB186 /* HomePage.swift */; };
 		727647F527623360004EB186 /* PowerupPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727647F427623360004EB186 /* PowerupPage.swift */; };
 		727647F7276233C1004EB186 /* AccountPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727647F6276233C1004EB186 /* AccountPage.swift */; };
+		72D0A62F276665AD00301544 /* CText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D0A62E276665AD00301544 /* CText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		727647F2276231C7004EB186 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		727647F427623360004EB186 /* PowerupPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerupPage.swift; sourceTree = "<group>"; };
 		727647F6276233C1004EB186 /* AccountPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPage.swift; sourceTree = "<group>"; };
+		72D0A62E276665AD00301544 /* CText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		727647D92762080E004EB186 /* AR-pictionary */ = {
 			isa = PBXGroup;
 			children = (
+				72D0A62D2766657700301544 /* styling */,
 				7271776D276266FE007AAC4E /* components */,
 				727647F1276231B2004EB186 /* pages */,
 				727647F027620CCC004EB186 /* Info.plist */,
@@ -120,6 +123,14 @@
 				727647F6276233C1004EB186 /* AccountPage.swift */,
 			);
 			path = pages;
+			sourceTree = "<group>";
+		};
+		72D0A62D2766657700301544 /* styling */ = {
+			isa = PBXGroup;
+			children = (
+				72D0A62E276665AD00301544 /* CText.swift */,
+			);
+			path = styling;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +210,7 @@
 				727647F527623360004EB186 /* PowerupPage.swift in Sources */,
 				727647F7276233C1004EB186 /* AccountPage.swift in Sources */,
 				7271777127628378007AAC4E /* DailyChallenge.swift in Sources */,
+				72D0A62F276665AD00301544 /* CText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
