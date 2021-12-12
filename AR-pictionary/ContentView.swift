@@ -20,7 +20,7 @@ struct ContentView: View {
                             .scaledToFit()
                             .frame(width: 34, height: 34)
                         if selectedNavPage == "home" {
-                            Text("Home").font(Font.custom("Nexa-Bold", size: 17)).foregroundColor(.white)
+                            CText(text: "Home" , font: "Bold", size: 17, color: "pWhite")
                         }
                     }
                 }
@@ -31,7 +31,7 @@ struct ContentView: View {
                             .scaledToFit()
                             .frame(width: 34, height: 34)
                         if selectedNavPage == "powerups" {
-                            Text("Powerups").font(Font.custom("Nexa-Bold", size: 17)).foregroundColor(.white)
+                            CText(text: "Powerups" , font: "Bold", size: 17, color: "pWhite")
                         }
                     }
                 }
@@ -42,7 +42,7 @@ struct ContentView: View {
                             .scaledToFit()
                             .frame(width: 34, height: 34)
                         if selectedNavPage == "account" {
-                            Text("Account").font(Font.custom("Nexa-Bold", size: 17)).foregroundColor(.white)
+                            CText(text: "Account" , font: "Bold", size: 17, color: "pWhite")
                         }
                     }
                     

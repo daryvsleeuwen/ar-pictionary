@@ -3,7 +3,7 @@ import SwiftUI
 struct AccountPage: View {
     var body: some View {
         VStack{
-            Text("AccountPage")
+            CText(text: "AccountPage" , font: "Bold", size: 18, color: "pWhite")
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
