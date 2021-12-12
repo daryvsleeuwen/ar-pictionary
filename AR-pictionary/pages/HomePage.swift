@@ -3,7 +3,7 @@ import SwiftUI
 struct HomePage: View {
     @State var playerXP: Int
     private let neededXPForLevelUp: Int = 400
-    private let DailyChallenges: [DailyChallenge] = DailyChallenge.data
+    private let DailyChallenges: [DailyChallenge] = DailyChallenge.dummyData
     
     var body: some View {
         VStack(alignment: .leading){

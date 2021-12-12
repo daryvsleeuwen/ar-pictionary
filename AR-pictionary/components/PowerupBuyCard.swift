@@ -20,7 +20,7 @@ struct PowerupBuyCard: View {
             VStack{
                 VStack(alignment: .center, spacing: 0){
                     Image(icon).padding(.bottom, 15).padding(.trailing, padding)
-                    CText(text: name, font: "Bold", size: 15, color: "pBlack", alignment: .center).fixedSize(horizontal: false, vertical: true)
+                    CText(text: name, font: "Bold", size: 15, color: "pBlack", alignment: .center).fixedSize(horizontal: false, vertical: true).padding(.leading, 14).padding(.trailing, 15)
                 }.frame(maxHeight: .infinity)
                 Spacer()
                 Button(action: {
@@ -38,7 +38,7 @@ struct PowerupBuyCard: View {
                 
             }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color.white).cornerRadius(12).shadow(color: .black.opacity(0.15), radius: 8, x: 0, y: 2).overlay(
                 ZStack(alignment: .center){
-                    Circle().fill(Color("pBlack")).frame(maxWidth: 30, maxHeight: 30)
+                    Circle().fill(Color("pBlack")).frame(maxWidth: 34, maxHeight: 34)
                     CText(text: String(currentAmount), font: "Bold", size: 16, color: "pWhite").padding(.top, 4)
                 }.position(x: reader.size.width, y: 0)
             )

@@ -14,7 +14,7 @@ struct DailyChallenge: Identifiable {
 }
 
 extension DailyChallenge {
-    static var data: [DailyChallenge] {
+    static var dummyData: [DailyChallenge] {
         [
             DailyChallenge(title: "Raad een tekening binnen 10 seconden", xpReward: 100),
             DailyChallenge(title: "Win een game met 8 punten", xpReward: 250),
