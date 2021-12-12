@@ -1,13 +1,14 @@
 import SwiftUI
 
 struct PowerupBuyCard: View {
-    var icon: String, currentAmount: Int, cost: Int, name: String, padding: CGFloat = 0
+    @Binding var currentAmount: Int
+    var icon: String, cost: Int, name: String, padding: CGFloat = 0
     
-    init(icon: String, currentAmount: Int, cost: Int, name: String){
+    init(icon: String, cost: Int, name: String, currentAmount: Binding<Int>){
         self.icon = icon
-        self.currentAmount = currentAmount
         self.cost = cost
         self.name = name
+        self._currentAmount = currentAmount
         
         if (icon == "time_increase_buy" || icon == "time_decrease_buy") {
             padding = 20
@@ -24,6 +25,7 @@ struct PowerupBuyCard: View {
                 Spacer()
                 Button(action: {
                     //TODO - Increase currentAmount and decrease current user coins.
+                    currentAmount += 1
                 }, label: {
                     HStack(spacing: 0){
                         CText(text: String(cost), font: "XBold", size: 18, color: "pWhite").padding(.top, 5).padding(.trailing, 5)
@@ -42,11 +44,5 @@ struct PowerupBuyCard: View {
             )
         }
         
-    }
-}
-
-struct PowerupBuyCard_Previews: PreviewProvider {
-    static var previews: some View {
-        PowerupBuyCard(icon: "time_increase_buy", currentAmount: 3, cost: 10, name: "Krijg 5 seconden extra tijd").frame(width: 170, height: 170)
     }
 }
