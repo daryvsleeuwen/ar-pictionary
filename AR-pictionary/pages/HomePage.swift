@@ -56,7 +56,7 @@ struct HomePage: View {
                 }
             }
             Spacer()
-        }.padding()
+        }.padding(20)
     }
 }
 
