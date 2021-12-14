@@ -1,13 +1,13 @@
 import SwiftUI
 
 struct HomePage: View {
-    @State var playerXP: Int
+    @EnvironmentObject var user: User
     private let neededXPForLevelUp: Int = 400
     private let DailyChallenges: [DailyChallenge] = DailyChallenge.dummyData
     
     var body: some View {
         VStack(alignment: .leading){
-            PageHeader(currentCoins: 136, playerLevel: 23)
+            PageHeader()
             VStack{
                 CText(text: "Je bent bijna level 24!" , font: "XBold", size: 22, color: "pWhite").padding(.bottom, 15)
                 Circle()
@@ -17,7 +17,7 @@ struct HomePage: View {
                     .overlay(
                         ZStack{
                             Circle().fill(Color("pBlack")).frame(width: 120, height: 120)
-                            CText(text: "Nog \(neededXPForLevelUp - playerXP)xp" , font: "XBold", size: 16, color: "pWhite")
+                            CText(text: "Nog \(neededXPForLevelUp - user.currentXp)xp" , font: "XBold", size: 16, color: "pWhite")
                         }
                     ).padding(.bottom, 15)
                 
@@ -62,6 +62,6 @@ struct HomePage: View {
 
 struct HomePage_Previews: PreviewProvider {
     static var previews: some View {
-        HomePage(playerXP: 272)
+        HomePage()
     }
 }

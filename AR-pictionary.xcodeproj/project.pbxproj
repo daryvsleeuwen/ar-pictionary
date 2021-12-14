@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72576E052768D9AE00DDFD4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72576E042768D9AE00DDFD4A /* User.swift */; };
 		7271776F27626718007AAC4E /* PageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7271776E27626718007AAC4E /* PageHeader.swift */; };
 		7271777127628378007AAC4E /* DailyChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7271777027628378007AAC4E /* DailyChallenge.swift */; };
 		727647DB2762080E004EB186 /* AR_pictionaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727647DA2762080E004EB186 /* AR_pictionaryApp.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		72576E042768D9AE00DDFD4A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7271776E27626718007AAC4E /* PageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageHeader.swift; sourceTree = "<group>"; };
 		7271777027628378007AAC4E /* DailyChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallenge.swift; sourceTree = "<group>"; };
 		727647D72762080E004EB186 /* AR-pictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR-pictionary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +148,7 @@
 			children = (
 				7271777027628378007AAC4E /* DailyChallenge.swift */,
 				72D0A63527668F7700301544 /* Powerups.swift */,
+				72576E042768D9AE00DDFD4A /* User.swift */,
 			);
 			path = dummy;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				72D0A63127666CD000301544 /* BackgroundGradient.swift in Sources */,
 				727647DB2762080E004EB186 /* AR_pictionaryApp.swift in Sources */,
 				72D0A63627668F7700301544 /* Powerups.swift in Sources */,
+				72576E052768D9AE00DDFD4A /* User.swift in Sources */,
 				7271776F27626718007AAC4E /* PageHeader.swift in Sources */,
 				727647F527623360004EB186 /* PowerupPage.swift in Sources */,
 				727647F7276233C1004EB186 /* AccountPage.swift in Sources */,

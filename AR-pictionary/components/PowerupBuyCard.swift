@@ -3,8 +3,15 @@ import SwiftUI
 struct PowerupBuyCard: View {
     @ObservedObject var powerupData: Powerup
     var padding: CGFloat = 0
- 
     
+    init(powerupData: Powerup){
+        self.powerupData = powerupData
+        
+        if (powerupData.icon == "time_increase_buy" || powerupData.icon == "time_decrease_buy") {
+            padding = 20
+        }
+    }
+ 
     var body: some View {
         GeometryReader { reader in
             VStack{
