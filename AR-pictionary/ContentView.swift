@@ -18,7 +18,7 @@ struct ContentView: View {
                     VStack(spacing: 0){
                         Image("home").resizable()
                             .scaledToFit()
-                            .frame(width: 34, height: 34)
+                            .frame(width: 34, height: 34).padding(.bottom, 5)
                         if selectedNavPage == "home" {
                             CText(text: "Home" , font: "Bold", size: 17, color: "pWhite")
                         }
@@ -29,7 +29,7 @@ struct ContentView: View {
                     VStack(spacing: 0){
                         Image("powerup").resizable()
                             .scaledToFit()
-                            .frame(width: 34, height: 34)
+                            .frame(width: 34, height: 34).padding(.bottom, 5)
                         if selectedNavPage == "powerups" {
                             CText(text: "Powerups" , font: "Bold", size: 17, color: "pWhite")
                         }
@@ -40,7 +40,7 @@ struct ContentView: View {
                     VStack(spacing: 0){
                         Image("person").resizable()
                             .scaledToFit()
-                            .frame(width: 34, height: 34)
+                            .frame(width: 34, height: 34).padding(.bottom, 5)
                         if selectedNavPage == "account" {
                             CText(text: "Account" , font: "Bold", size: 17, color: "pWhite")
                         }
