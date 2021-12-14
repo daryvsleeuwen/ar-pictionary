@@ -2,6 +2,7 @@ import SwiftUI
 
 struct PowerupBuyCard: View {
     @ObservedObject var powerupData: Powerup
+    @EnvironmentObject var user: User
     var padding: CGFloat = 0
     
     init(powerupData: Powerup){
@@ -21,8 +22,12 @@ struct PowerupBuyCard: View {
                 }.frame(maxHeight: .infinity)
                 Spacer()
                 Button(action: {
-                    //TODO - Decrease current user coins.
-                    powerupData.currentAmount += 1
+                    if(user.amountOfCoins > powerupData.cost){
+                        powerupData.currentAmount += 1
+                        user.amountOfCoins -= powerupData.cost
+                        //TODO - Update amount of powerups to database
+                    }
+                    
                 }, label: {
                     HStack(spacing: 0){
                         CText(text: String(powerupData.cost), font: "XBold", size: 18, color: "pWhite").padding(.top, 5).padding(.trailing, 5)
