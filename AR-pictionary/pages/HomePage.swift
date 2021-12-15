@@ -21,14 +21,16 @@ struct HomePage: View {
                         }
                     ).padding(.bottom, 15)
                 
-                Button(action: {
-                    //TODO: route to new game screen
-                }, label: {
-                    Spacer()
-                    CText(text: "Start een nieuwe game" , font: "Bold", size: 18, color: "pBlack")
-                    Spacer()
-                    
-                }).padding().frame(maxWidth: .infinity).background(Color.white).cornerRadius(12)
+                NavigationLink(destination: GamePage(gameID: UUID())) {
+                    Button(action: {
+                        //TODO: route to new game screen
+                    }, label: {
+                        Spacer()
+                        CText(text: "Start een nieuwe game" , font: "Bold", size: 18, color: "pBlack")
+                        Spacer()
+                        
+                    }).padding().frame(maxWidth: .infinity).background(Color.white).cornerRadius(12)
+                }
             }.frame(
                 maxWidth: .infinity
             ).padding(20).background(BackgroundGradient).cornerRadius(18).padding(.bottom, 30)
