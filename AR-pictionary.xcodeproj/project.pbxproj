@@ -10,6 +10,7 @@
 		72576E052768D9AE00DDFD4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72576E042768D9AE00DDFD4A /* User.swift */; };
 		72576E07276A17E200DDFD4A /* GamePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72576E06276A17E200DDFD4A /* GamePage.swift */; };
 		72576E09276A194F00DDFD4A /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72576E08276A194F00DDFD4A /* GameConfig.swift */; };
+		72576E0B276A24F100DDFD4A /* CButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72576E0A276A24F100DDFD4A /* CButton.swift */; };
 		7271776F27626718007AAC4E /* PageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7271776E27626718007AAC4E /* PageHeader.swift */; };
 		7271777127628378007AAC4E /* DailyChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7271777027628378007AAC4E /* DailyChallenge.swift */; };
 		727647DB2762080E004EB186 /* AR_pictionaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727647DA2762080E004EB186 /* AR_pictionaryApp.swift */; };
@@ -29,6 +30,7 @@
 		72576E042768D9AE00DDFD4A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		72576E06276A17E200DDFD4A /* GamePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePage.swift; sourceTree = "<group>"; };
 		72576E08276A194F00DDFD4A /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfig.swift; sourceTree = "<group>"; };
+		72576E0A276A24F100DDFD4A /* CButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CButton.swift; sourceTree = "<group>"; };
 		7271776E27626718007AAC4E /* PageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageHeader.swift; sourceTree = "<group>"; };
 		7271777027628378007AAC4E /* DailyChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallenge.swift; sourceTree = "<group>"; };
 		727647D72762080E004EB186 /* AR-pictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR-pictionary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,7 @@
 			children = (
 				7271776E27626718007AAC4E /* PageHeader.swift */,
 				72D0A63227666E4F00301544 /* PowerupBuyCard.swift */,
+				72576E0A276A24F100DDFD4A /* CButton.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			files = (
 				727647F3276231C7004EB186 /* HomePage.swift in Sources */,
 				72D0A63327666E4F00301544 /* PowerupBuyCard.swift in Sources */,
+				72576E0B276A24F100DDFD4A /* CButton.swift in Sources */,
 				72576E07276A17E200DDFD4A /* GamePage.swift in Sources */,
 				727647DD2762080E004EB186 /* ContentView.swift in Sources */,
 				72D0A63127666CD000301544 /* BackgroundGradient.swift in Sources */,

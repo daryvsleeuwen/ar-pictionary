@@ -12,9 +12,10 @@ struct GamePage: View {
     func renderLoadingScreen() -> some View{
         return VStack(alignment: .center){
             CText(text: "Zoeken naar een tegenstander...", font: "Bold", size: 32, color: "pOrange", alignment: .center).lineSpacing(8).padding(.bottom, 30)
-            NavigationLink(destination: ContentView()) {
-                Label("Annuleren", systemImage: "cancel")
-            }
+            CButton(callback: {
+                print("Custom Button Clicked")
+            }, label: "Annuleren", width: 250)
+            
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
