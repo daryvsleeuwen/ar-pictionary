@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct GamePage: View {
-    @State private var opponentFounded: Bool = false;
     @ObservedObject var gameConfig: GameConfig
     
     init(gameID: UUID){
@@ -20,27 +19,44 @@ struct GamePage: View {
     }
     
     func searchOpponent() {
-
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            gameConfig.opponentFounded = true
+        }
     }
     
     func cancelGame(){
-        
+        //TODO - route back to main screen/home
     }
     
     func renderGameScreen() -> some View{
-        return VStack{
-            CText(text: "Tegenstander gevonden", font: "Bold", size: 32, color: "pOrange", alignment: .center)
+        return ZStack{
+            //VStack for ARView replacement for testing purposes
+            VStack{
+                
+            }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color(.white))
+            VStack{
+                VStack{
+                    CText(text: "Score", font: "Bold", size: 22, color: "pWhite", alignment: .center).padding(.bottom, 2)
+                    HStack(alignment: .bottom, spacing: 0){
+                        CText(text: "Dary", font: "Regular", size: 21, color: "pWhite", alignment: .center)
+                        CText(text: "2 : 7", font: "Bold", size: 26, color: "pWhite", alignment: .center).padding(.leading, 18).padding(.trailing, 18)
+                        CText(text: "Niels", font: "Regular", size: 21, color: "pWhite", alignment: .center)
+                    }
+                }.padding().frame(maxWidth: .infinity).background(BackgroundGradient).cornerRadius(12)
+            }.frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
     
     var body: some View {
         VStack(){
-            switch opponentFounded {
-            case true: renderGameScreen()
-            case false: renderLoadingScreen()
+            if(gameConfig.opponentFounded){
+                renderGameScreen()
+            }
+            else{
+                renderLoadingScreen()
             }
             Spacer()
-        }.padding(20)
+        }.ignoresSafeArea()
     }
 }
 
