@@ -42,6 +42,15 @@ struct GamePage: View {
                         CText(text: "2 : 7", font: "Bold", size: 26, color: "pWhite", alignment: .center).padding(.leading, 18).padding(.trailing, 18)
                         CText(text: "Niels", font: "Regular", size: 21, color: "pWhite", alignment: .center)
                     }
+                    HStack(alignment: .center){
+                        ZStack(alignment: .trailing){
+                            RoundedRectangle(cornerRadius: 10).stroke(Color.white, lineWidth: 1.5).frame(maxWidth: .infinity, maxHeight: 8)
+                                
+                            RoundedRectangle(cornerRadius: 10).fill(Color(.white)).frame(maxWidth: 300, maxHeight: 8)
+                        }
+                        CText(text: "\(Int(gameConfig.timeRemaining))sec", font: "Bold", size: 16, color: "pWhite").padding(.top, 2)
+                    }
+                    
                 }.padding().frame(maxWidth: .infinity).background(BackgroundGradient).cornerRadius(12)
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
         }
