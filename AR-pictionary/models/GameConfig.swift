@@ -10,6 +10,10 @@ class GameConfig: ObservableObject {
     @Published var guesses: [String] = []
     @Published var timeRemaining: Double
     @Published var currentPlayerTurn: UUID?
+    @Published var userScore: Int = 0
+    @Published var opponentScore: Int = 0
+    @Published var guessableWord: String = ""
+
 
     init(){
         self.timeRemaining = Double(self.timeLimitInSeconds)

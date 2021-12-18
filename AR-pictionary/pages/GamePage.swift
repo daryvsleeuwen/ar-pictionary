@@ -38,8 +38,10 @@ struct GamePage: View {
         //Always using current user.id as starter for development purposes. Later use random starter variable
         gameConfig.currentPlayerTurn = user.id //Use starter var in production
         gameConfig.opponentFounded = true
+        //Pick random word from array of game words. Now setting to static word
+        gameConfig.guessableWord = "Boerderij"
     }
-
+    
     func cancelGame(){
         //TODO - route back to main screen/home
     }
@@ -73,7 +75,7 @@ struct GamePage: View {
                         if(turn == user.id){
                             //Render draw bottom controls
                             VStack( alignment: .leading, spacing: 0){
-                                CText(text: "Teken een \("Boerderij")", font: "Bold", size: 21, color: "pWhite").padding(.bottom, 15)
+                                CText(text: "Teken een \(gameConfig.guessableWord)", font: "Bold", size: 21, color: "pWhite").padding(.bottom, 15)
                                 HStack{
                                     HStack(spacing: 8){
                                         ForEach(0..<6){index in
