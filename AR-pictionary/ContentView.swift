@@ -8,6 +8,7 @@ struct ContentView: View {
     var body: some View {
         VStack{
             switch selectedNavPage {
+                //Replace home with HomePage when GamePage development is done
             case "home": GamePage(user: user)
             case "powerups": PowerupPage()
             case "account": AccountPage()
