@@ -1,17 +1,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedNavPage: String = "home"
     //TODO - Load user data from backend instead of hardcoded values
     @StateObject var user = User(name: "Dary", amountOfCoins: 136, currentLevel: 23, currentXp: 272)
+    @State private var selectedNavPage: String = "home"
     
     var body: some View {
         VStack{
             switch selectedNavPage {
-            case "home": HomePage().environmentObject(user)
-            case "powerups": PowerupPage().environmentObject(user)
+            case "home": GamePage(user: user)
+            case "powerups": PowerupPage()
             case "account": AccountPage()
-            default: HomePage().environmentObject(user)
+            default: HomePage()
             }
             
             HStack(){

@@ -1,15 +1,17 @@
 import Foundation
+import SwiftUI
 
 class GameConfig: ObservableObject {
-    var gameID: UUID
+    @Published var gameID: UUID?
     var timeLimitInSeconds: Int = 15
+    var drawColors: [Color] = [Color.black, Color.red, Color.orange, Color.green, Color.blue, Color.pink]
     @Published var opponentFounded: Bool = true
-    @Published var started: Bool = false
+    @Published var opponent: User?
     @Published var guesses: [String] = []
     @Published var timeRemaining: Double
+    @Published var currentPlayerTurn: UUID?
 
-    init(gameID: UUID){
-        self.gameID = gameID
+    init(){
         self.timeRemaining = Double(self.timeLimitInSeconds)
     }
 }
