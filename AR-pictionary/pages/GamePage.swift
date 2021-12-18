@@ -56,9 +56,9 @@ struct GamePage: View {
                 VStack(spacing: 8){
                     CText(text: "Score", font: "Bold", size: 22, color: "pWhite", alignment: .center).padding(.bottom, 2)
                     HStack(alignment: .bottom, spacing: 0){
-                        CText(text: "Dary", font: "Regular", size: 21, color: "pWhite", alignment: .center)
-                        CText(text: "2 : 7", font: "Bold", size: 26, color: "pWhite", alignment: .center).padding(.leading, 18).padding(.trailing, 18)
-                        CText(text: "Niels", font: "Regular", size: 21, color: "pWhite", alignment: .center)
+                        CText(text: user.name, font: "Regular", size: 21, color: "pWhite", alignment: .center)
+                        CText(text: "\(gameConfig.userScore) : \(gameConfig.opponentScore)", font: "Bold", size: 26, color: "pWhite", alignment: .center).padding(.leading, 18).padding(.trailing, 18)
+                        CText(text: gameConfig.opponent?.name ?? "Tegenstander", font: "Regular", size: 21, color: "pWhite", alignment: .center)
                     }
                     HStack(alignment: .center){
                         ZStack(alignment: .trailing){
