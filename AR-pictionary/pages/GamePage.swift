@@ -4,6 +4,7 @@ struct GamePage: View {
     @ObservedObject var user: User
     @ObservedObject var gameConfig: GameConfig
     @State var currentDrawColor: Color = Color.black
+    @State var currentTool: String = "pencil"
     
     init(user: User){
         self.user = user
@@ -98,16 +99,32 @@ struct GamePage: View {
                                     }.padding(10).background(Color.white).cornerRadius(12)
                                     Spacer()
                                     HStack{
-                                        Button(action: {}, label: {
-                                            Image("brush")
-                                        })
-                                        Button(action: {}, label: {
-                                            Image("eraser")
-                                        })
+                                        let pencilIndicatorWidth: CGFloat = currentTool == "pencil" ? 25: 0
+                                        let eraserIndicatorWidth: CGFloat = currentTool == "eraser" ? 25: 0
+                                        
+                                        VStack{
+                                            Button(action: {
+                                                currentTool = "pencil"
+                                            }, label: {
+                                                Image("brush")
+                                            })
+                                            Spacer()
+                                            RoundedRectangle(cornerRadius: 10).fill(Color.white).frame(width: pencilIndicatorWidth, height: 3).animation(Animation.timingCurve(0.09, 0.66, 0.26, 0.88, duration: 0.3), value: pencilIndicatorWidth)
+                                        }.frame(height: 42).padding(.trailing, 6)
+                                        
+                                        VStack{
+                                            Button(action: {
+                                                currentTool = "eraser"
+                                            }, label: {
+                                                Image("eraser")
+                                            })
+                                            
+                                            Spacer()
+                                            RoundedRectangle(cornerRadius: 10).fill(Color.white).frame(width: eraserIndicatorWidth, height: 3).animation(Animation.timingCurve(0.09, 0.66, 0.26, 0.88, duration: 0.3), value: eraserIndicatorWidth)
+                                        }.frame(height: 42)
+                                        
                                     }
-                                    Spacer()
                                 }
-                                
                             }
                         }else{
                             //Render guess bottom controls
