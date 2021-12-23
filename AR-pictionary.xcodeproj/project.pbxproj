@@ -31,6 +31,7 @@
 		72D0A63127666CD000301544 /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D0A63027666CD000301544 /* BackgroundGradient.swift */; };
 		72D0A63327666E4F00301544 /* PowerupBuyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D0A63227666E4F00301544 /* PowerupBuyCard.swift */; };
 		72D0A63627668F7700301544 /* Powerup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D0A63527668F7700301544 /* Powerup.swift */; };
+		72F387F12770E5AE00CCC44F /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 72F387F02770E5AE00CCC44F /* SocketIO */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72F387F12770E5AE00CCC44F /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +104,7 @@
 		727647D92762080E004EB186 /* AR-pictionary */ = {
 			isa = PBXGroup;
 			children = (
+				72F387EE2770BFAF00CCC44F /* Pods */,
 				72D0A63427668F6700301544 /* models */,
 				72D0A62D2766657700301544 /* styling */,
 				7271776D276266FE007AAC4E /* components */,
@@ -169,6 +172,13 @@
 			path = models;
 			sourceTree = "<group>";
 		};
+		72F387EE2770BFAF00CCC44F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -185,6 +195,9 @@
 			dependencies = (
 			);
 			name = "AR-pictionary";
+			packageProductDependencies = (
+				72F387F02770E5AE00CCC44F /* SocketIO */,
+			);
 			productName = "AR-pictionary";
 			productReference = 727647D72762080E004EB186 /* AR-pictionary.app */;
 			productType = "com.apple.product-type.application";
@@ -213,6 +226,9 @@
 				Base,
 			);
 			mainGroup = 727647CE2762080E004EB186;
+			packageReferences = (
+				72F387EF2770E5AE00CCC44F /* XCRemoteSwiftPackageReference "socket" */,
+			);
 			productRefGroup = 727647D82762080E004EB186 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -388,10 +404,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "AR-pictionary/Preview\\ Content AR-pictionary/Assets.xcassets AR-pictionary/fonts";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UQY6BVD43U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AR-pictionary/Info.plist";
@@ -406,7 +423,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "AR-pictionary.AR-pictionary";
+				PRODUCT_BUNDLE_IDENTIFIER = "AR-pictionary";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -420,10 +437,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "AR-pictionary/Preview\\ Content AR-pictionary/Assets.xcassets AR-pictionary/fonts";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = UQY6BVD43U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AR-pictionary/Info.plist";
@@ -438,7 +456,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "AR-pictionary.AR-pictionary";
+				PRODUCT_BUNDLE_IDENTIFIER = "AR-pictionary";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -469,6 +487,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		72F387EF2770E5AE00CCC44F /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		72F387F02770E5AE00CCC44F /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72F387EF2770E5AE00CCC44F /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 727647CF2762080E004EB186 /* Project object */;
 }

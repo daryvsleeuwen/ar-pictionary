@@ -1,4 +1,8 @@
 import SwiftUI
+import SocketIO
+
+let manager = SocketManager(socketURL: URL(string: "http://192.168.178.61:80")!, config: [.log(false), .compress])
+let socket = manager.defaultSocket
 
 struct GamePage: View {
     @ObservedObject var user: User
@@ -9,12 +13,21 @@ struct GamePage: View {
     init(user: User){
         self.user = user
         self.gameConfig = GameConfig()
-        searchOpponent()
+    
+        socket.on(clientEvent: .connect) {data, ack in
+            socket.emit("search_opponent", [user.name, user.id.uuidString])
+        }
+        
+        socket.on("game_created") {data, ack in
+            print(data)
+        }
+        
+        socket.connect()
     }
     
     func renderLoadingScreen() -> some View{
         return VStack(alignment: .center){
-            CText(text: "Zoeken naar een tegenstander...", font: "Bold", size: 32, color: "pOrange", alignment: .center).lineSpacing(8).padding(.bottom, 30)
+            CText(text: "Zoeken naar een tegenstander...", font: "Bold", size: 32, color: "pOrange", alignment: .center).lineSpacing(8).padding(.bottom, 30).frame(width: 300)
             CButton(callback: {
                 //Remove user from game  queue in backend and route back to HomePage
                 print("Custom Button Clicked")
@@ -24,23 +37,22 @@ struct GamePage: View {
     }
     
     func searchOpponent() {
-        //Get new gameID from backend with according opponent user
-        let gameID = UUID()
-        
-        //Get from backend queue instead of hardcoded new User
-        let searchedOpponent = User(name: "Niels")
-        
-        //Determine random player starter by selecting random value from array
-        let starter = [user.id, searchedOpponent.id].randomElement()!
-        
-        gameConfig.gameID = gameID
-        gameConfig.opponent = searchedOpponent
-        
-        //Always using current user.id as starter for development purposes. Later use random starter variable
-        gameConfig.currentPlayerTurn = user.id //Use starter var in production
-        gameConfig.opponentFounded = true
-        //Pick random word from array of game words. Now setting to static word
-        gameConfig.guessableWord = "Boerderij"
+//        //Get new gameID from backend with according opponent user
+//        let gameID = UUID()
+//        
+//        //Get from backend queue instead of hardcoded new User
+//        let searchedOpponent = User(name: "Niels")
+//        
+//        //Determine random player starter by selecting random value from array
+//        let starter = [user.id, searchedOpponent.id].randomElement()!
+//        
+//        gameConfig.gameID = gameID
+//        gameConfig.opponent = searchedOpponent
+//        
+//        //Always using current user.id as starter for development purposes. Later use random starter variable
+//        gameConfig.currentPlayerTurn = user.id //Use starter var in production
+//        //Pick random word from array of game words. Now setting to static word
+//        gameConfig.guessableWord = "Boerderij"
     }
     
     func cancelGame(){
@@ -73,7 +85,7 @@ struct GamePage: View {
                 Spacer()
                 VStack{
                     if let turn = gameConfig.currentPlayerTurn {
-                        if(turn == user.id){
+                        if(turn == "test"){
                             //Render draw bottom controls
                             VStack( alignment: .leading, spacing: 0){
                                 CText(text: "Teken een \(gameConfig.guessableWord)", font: "Bold", size: 21, color: "pWhite").padding(.bottom, 15)
@@ -141,7 +153,7 @@ struct GamePage: View {
     
     var body: some View {
         VStack(){
-            if(gameConfig.opponentFounded){
+            if(gameConfig.started){
                 renderGameScreen()
             }
             else{

@@ -52,7 +52,7 @@ struct ContentView: View {
                 }
                 Spacer()
             }.padding().cornerRadius(18).background(BackgroundGradient).ignoresSafeArea()
-        }.ignoresSafeArea(edges: .bottom)
+        }.ignoresSafeArea(edges: .bottom).background(Color.white)
     }
 }
 
