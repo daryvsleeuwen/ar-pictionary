@@ -22,6 +22,8 @@ class GameConfig: ObservableObject {
         gameID = data.gameID
         currentPlayerTurn = data.currentPlayerTurn
         guessableWord = data.guessableWord
+        timeLimitInSeconds = data.timeLimitInSeconds
+        timeRemaining = data.timeRemaining
         opponent = opp
         started = true
     }
@@ -36,5 +38,7 @@ struct StarterGameConfig: Decodable {
     let gameID: String
     let currentPlayerTurn: String
     let guessableWord: String
+    let timeLimitInSeconds: Int
+    let timeRemaining: Double
     let players: [Player]
 }
