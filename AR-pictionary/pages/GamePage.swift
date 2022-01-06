@@ -6,20 +6,36 @@ let socket = manager.defaultSocket
 
 struct GamePage: View {
     @ObservedObject var user: User
-    @ObservedObject var gameConfig: GameConfig
+    @ObservedObject var gameConfig: GameConfig = GameConfig()
+    @State var started: Bool = false
     @State var currentDrawColor: Color = Color.black
     @State var currentTool: String = "pencil"
+    let decoder = JSONDecoder()
     
     init(user: User){
         self.user = user
-        self.gameConfig = GameConfig()
-    
+        initSocketEvents()
+    }
+
+    func initSocketEvents(){
         socket.on(clientEvent: .connect) {data, ack in
             socket.emit("search_opponent", [user.name, user.id.uuidString])
         }
         
         socket.on("game_created") {data, ack in
-            print(data)
+            guard let json = data[0] as? String else { return }
+            
+            if let jsonString = json.data(using: .utf8){
+                do{
+                    let gameData = try decoder.decode(StarterGameConfig.self, from: jsonString)
+                    print(gameData)
+                    let opponent: Player = gameData.players[0].name == user.name ? gameData.players[1] : gameData.players[0]
+                    gameConfig.parseStarterData(data: gameData, opp: opponent)
+                }
+                catch{
+                    print(error)
+                }
+            }
         }
         
         socket.connect()
@@ -34,25 +50,6 @@ struct GamePage: View {
             }, label: "Annuleren", width: 250)
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
-    
-    func searchOpponent() {
-//        //Get new gameID from backend with according opponent user
-//        let gameID = UUID()
-//        
-//        //Get from backend queue instead of hardcoded new User
-//        let searchedOpponent = User(name: "Niels")
-//        
-//        //Determine random player starter by selecting random value from array
-//        let starter = [user.id, searchedOpponent.id].randomElement()!
-//        
-//        gameConfig.gameID = gameID
-//        gameConfig.opponent = searchedOpponent
-//        
-//        //Always using current user.id as starter for development purposes. Later use random starter variable
-//        gameConfig.currentPlayerTurn = user.id //Use starter var in production
-//        //Pick random word from array of game words. Now setting to static word
-//        gameConfig.guessableWord = "Boerderij"
     }
     
     func cancelGame(){
@@ -71,7 +68,7 @@ struct GamePage: View {
                     HStack(alignment: .bottom, spacing: 0){
                         CText(text: user.name, font: "Regular", size: 21, color: "pWhite", alignment: .center)
                         CText(text: "\(gameConfig.userScore) : \(gameConfig.opponentScore)", font: "Bold", size: 26, color: "pWhite", alignment: .center).padding(.leading, 18).padding(.trailing, 18)
-                        CText(text: gameConfig.opponent?.name ?? "Tegenstander", font: "Regular", size: 21, color: "pWhite", alignment: .center)
+                        CText(text: gameConfig.opponent!.name, font: "Regular", size: 21, color: "pWhite", alignment: .center)
                     }
                     HStack(alignment: .center){
                         ZStack(alignment: .trailing){
@@ -85,7 +82,7 @@ struct GamePage: View {
                 Spacer()
                 VStack{
                     if let turn = gameConfig.currentPlayerTurn {
-                        if(turn == "test"){
+                        if(turn == user.id.uuidString){
                             //Render draw bottom controls
                             VStack( alignment: .leading, spacing: 0){
                                 CText(text: "Teken een \(gameConfig.guessableWord)", font: "Bold", size: 21, color: "pWhite").padding(.bottom, 15)
