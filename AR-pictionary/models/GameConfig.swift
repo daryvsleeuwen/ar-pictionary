@@ -3,11 +3,11 @@ import SwiftUI
 
 class GameConfig: ObservableObject {
     @Published var gameID: String?
-    var timeLimitInSeconds: Int = 15
+    var timeLimitInSeconds: Double = 15
     var drawColors: [Color] = [Color.black, Color.red, Color.orange, Color.green, Color.blue, Color.pink]
     @Published var opponent: Player?
     @Published var guesses: [String] = []
-    @Published var timeRemaining: Double = 15.0
+    @Published var timeRemaining: Double = 15
     @Published var currentPlayerTurn: String?
     @Published var userScore: Int = 0
     @Published var opponentScore: Int = 0
@@ -15,7 +15,7 @@ class GameConfig: ObservableObject {
     @Published var started: Bool = false
     
     init(){
-        self.timeRemaining = Double(self.timeLimitInSeconds)
+        self.timeRemaining = self.timeLimitInSeconds
     }
     
     func parseStarterData(data: StarterGameConfig, opp: Player){
@@ -38,7 +38,7 @@ struct StarterGameConfig: Decodable {
     let gameID: String
     let currentPlayerTurn: String
     let guessableWord: String
-    let timeLimitInSeconds: Int
+    let timeLimitInSeconds: Double
     let timeRemaining: Double
     let players: [Player]
 }

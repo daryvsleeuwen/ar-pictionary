@@ -16,7 +16,7 @@ struct GamePage: View {
         self.user = user
         initSocketEvents()
     }
-
+    
     func initSocketEvents(){
         socket.on(clientEvent: .connect) {data, ack in
             socket.emit("search_opponent", [user.name, user.id.uuidString])
@@ -28,7 +28,6 @@ struct GamePage: View {
             if let jsonString = json.data(using: .utf8){
                 do{
                     let gameData = try decoder.decode(StarterGameConfig.self, from: jsonString)
-                    print(gameData)
                     let opponent: Player = gameData.players[0].name == user.name ? gameData.players[1] : gameData.players[0]
                     gameConfig.parseStarterData(data: gameData, opp: opponent)
                 }
@@ -36,6 +35,15 @@ struct GamePage: View {
                     print(error)
                 }
             }
+        }
+        
+        socket.on("time_decrease") { data, ack in
+            guard let timeRemaining = data[0] as? Int else { return }
+            gameConfig.timeRemaining = Double(timeRemaining)
+        }
+        
+        socket.on("game_deleted") { data, ack in
+            cancelGame()
         }
         
         socket.connect()
@@ -54,6 +62,7 @@ struct GamePage: View {
     
     func cancelGame(){
         //TODO - route back to main screen/home
+        print("Player disconnected or leaved. Routing back to home")
     }
     
     func renderGameScreen() -> some View{
@@ -68,14 +77,17 @@ struct GamePage: View {
                     HStack(alignment: .bottom, spacing: 0){
                         CText(text: user.name, font: "Regular", size: 21, color: "pWhite", alignment: .center)
                         CText(text: "\(gameConfig.userScore) : \(gameConfig.opponentScore)", font: "Bold", size: 26, color: "pWhite", alignment: .center).padding(.leading, 18).padding(.trailing, 18)
-                        CText(text: gameConfig.opponent!.name, font: "Regular", size: 21, color: "pWhite", alignment: .center)
+                        //                        CText(text: gameConfig.opponent!.name, font: "Regular", size: 21, color: "pWhite", alignment: .center)
                     }
                     HStack(alignment: .center){
-                        ZStack(alignment: .trailing){
-                            RoundedRectangle(cornerRadius: 10).stroke(Color.white, lineWidth: 1.5).frame(maxWidth: .infinity, maxHeight: 6)
+                        GeometryReader(){ reader in
+                            let timerWidth = CGFloat(gameConfig.timeRemaining / gameConfig.timeLimitInSeconds * reader.size.width)
                             
-                            RoundedRectangle(cornerRadius: 10).fill(Color(.white)).frame(maxWidth: 300, maxHeight: 6)
-                        }
+                            ZStack(alignment: .trailing){
+                                RoundedRectangle(cornerRadius: 10).stroke(Color.white, lineWidth: 1.5)
+                                RoundedRectangle(cornerRadius: 10).fill(Color(.white)).frame(width: timerWidth, height: 6)
+                            }
+                        }.frame(maxWidth: .infinity, maxHeight: 6)
                         CText(text: "\(Int(gameConfig.timeRemaining))sec", font: "Bold", size: 16, color: "pWhite").padding(.top, 2)
                     }
                 }.padding().frame(maxWidth: .infinity).background(BackgroundGradient).cornerRadius(12)
