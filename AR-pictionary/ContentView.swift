@@ -54,7 +54,7 @@ struct ContentView: View {
                     
                     VStack(spacing: 0){
                         NavigationLink(destination: ArView()) {
-                            Image("logo.xbox").resizable()
+                            Image("play").resizable()
                                 .scaledToFit()
                                 .frame(width: 34, height: 34).padding(.bottom, 5)
                             if selectedNavPage == "game" {

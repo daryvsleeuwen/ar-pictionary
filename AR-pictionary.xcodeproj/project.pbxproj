@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5712C7FB277334E900920EDF /* ArView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5712C7FA277334E900920EDF /* ArView.swift */; };
+		5712C7FE2774811700920EDF /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 5712C7FD2774811700920EDF /* FocusEntity */; };
 		72576E052768D9AE00DDFD4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72576E042768D9AE00DDFD4A /* User.swift */; };
 		72576E07276A17E200DDFD4A /* GamePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72576E06276A17E200DDFD4A /* GamePage.swift */; };
 		72576E09276A194F00DDFD4A /* GameConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72576E08276A194F00DDFD4A /* GameConfig.swift */; };
@@ -62,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5712C7FE2774811700920EDF /* FocusEntity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +183,9 @@
 			dependencies = (
 			);
 			name = "AR-pictionary";
+			packageProductDependencies = (
+				5712C7FD2774811700920EDF /* FocusEntity */,
+			);
 			productName = "AR-pictionary";
 			productReference = 727647D72762080E004EB186 /* AR-pictionary.app */;
 			productType = "com.apple.product-type.application";
@@ -209,6 +214,9 @@
 				Base,
 			);
 			mainGroup = 727647CE2762080E004EB186;
+			packageReferences = (
+				5712C7FC2774811700920EDF /* XCRemoteSwiftPackageReference "FocusEntity" */,
+			);
 			productRefGroup = 727647D82762080E004EB186 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -457,6 +465,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5712C7FC2774811700920EDF /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5712C7FD2774811700920EDF /* FocusEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5712C7FC2774811700920EDF /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			productName = FocusEntity;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 727647CF2762080E004EB186 /* Project object */;
 }
