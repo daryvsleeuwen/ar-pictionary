@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5773EEA5278D9431008E0FF2 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 5773EEA4278D9431008E0FF2 /* SocketIO */; };
+		5773EEA8278DA9CD008E0FF2 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 5773EEA7278DA9CD008E0FF2 /* FocusEntity */; };
 		720AE7FD276E605200D512F7 /* NexaBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 727647EC27620B2F004EB186 /* NexaBlack.otf */; };
 		720AE7FE276E605200D512F7 /* NexaBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 727647EA27620B2F004EB186 /* NexaBold.otf */; };
 		720AE7FF276E605200D512F7 /* NexaBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = 727647ED27620B2F004EB186 /* NexaBook.otf */; };
@@ -31,7 +33,6 @@
 		72D0A63127666CD000301544 /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D0A63027666CD000301544 /* BackgroundGradient.swift */; };
 		72D0A63327666E4F00301544 /* PowerupBuyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D0A63227666E4F00301544 /* PowerupBuyCard.swift */; };
 		72D0A63627668F7700301544 /* Powerup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D0A63527668F7700301544 /* Powerup.swift */; };
-		72F387F12770E5AE00CCC44F /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 72F387F02770E5AE00CCC44F /* SocketIO */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,7 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72F387F12770E5AE00CCC44F /* SocketIO in Frameworks */,
+				5773EEA8278DA9CD008E0FF2 /* FocusEntity in Frameworks */,
+				5773EEA5278D9431008E0FF2 /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +106,6 @@
 		727647D92762080E004EB186 /* AR-pictionary */ = {
 			isa = PBXGroup;
 			children = (
-				72F387EE2770BFAF00CCC44F /* Pods */,
 				72D0A63427668F6700301544 /* models */,
 				72D0A62D2766657700301544 /* styling */,
 				7271776D276266FE007AAC4E /* components */,
@@ -172,13 +173,6 @@
 			path = models;
 			sourceTree = "<group>";
 		};
-		72F387EE2770BFAF00CCC44F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -196,7 +190,8 @@
 			);
 			name = "AR-pictionary";
 			packageProductDependencies = (
-				72F387F02770E5AE00CCC44F /* SocketIO */,
+				5773EEA4278D9431008E0FF2 /* SocketIO */,
+				5773EEA7278DA9CD008E0FF2 /* FocusEntity */,
 			);
 			productName = "AR-pictionary";
 			productReference = 727647D72762080E004EB186 /* AR-pictionary.app */;
@@ -228,6 +223,7 @@
 			mainGroup = 727647CE2762080E004EB186;
 			packageReferences = (
 				72F387EF2770E5AE00CCC44F /* XCRemoteSwiftPackageReference "socket" */,
+				5773EEA6278DA9CD008E0FF2 /* XCRemoteSwiftPackageReference "FocusEntity" */,
 			);
 			productRefGroup = 727647D82762080E004EB186 /* Products */;
 			projectDirPath = "";
@@ -408,7 +404,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "AR-pictionary/Preview\\ Content AR-pictionary/Assets.xcassets AR-pictionary/fonts";
-				DEVELOPMENT_TEAM = UQY6BVD43U;
+				DEVELOPMENT_TEAM = PHT4BFJ694;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AR-pictionary/Info.plist";
@@ -441,7 +437,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "AR-pictionary/Preview\\ Content AR-pictionary/Assets.xcassets AR-pictionary/fonts";
-				DEVELOPMENT_TEAM = UQY6BVD43U;
+				DEVELOPMENT_TEAM = PHT4BFJ694;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AR-pictionary/Info.plist";
@@ -489,6 +485,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5773EEA6278DA9CD008E0FF2 /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		72F387EF2770E5AE00CCC44F /* XCRemoteSwiftPackageReference "socket" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
@@ -500,10 +504,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		72F387F02770E5AE00CCC44F /* SocketIO */ = {
+		5773EEA4278D9431008E0FF2 /* SocketIO */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 72F387EF2770E5AE00CCC44F /* XCRemoteSwiftPackageReference "socket" */;
 			productName = SocketIO;
+		};
+		5773EEA7278DA9CD008E0FF2 /* FocusEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5773EEA6278DA9CD008E0FF2 /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			productName = FocusEntity;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

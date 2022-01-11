@@ -1,8 +1,14 @@
 import SwiftUI
 import SocketIO
+import RealityKit
+import ARKit
+import FocusEntity
 
-let manager = SocketManager(socketURL: URL(string: "http://192.168.178.61:80")!, config: [.log(false), .compress])
+
+let manager = SocketManager(socketURL: URL(string: "http://192.168.178.149:80")!, config: [.log(false), .compress])
 let socket = manager.defaultSocket
+let ArContainerView = ARViewContainer()
+
 
 struct GamePage: View {
     @ObservedObject var user: User
@@ -69,8 +75,8 @@ struct GamePage: View {
         return ZStack{
             //VStack for ARView replacement for testing purposes
             VStack{
-                
-            }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color(.white))
+                ArContainerView
+            }.frame(maxWidth: .infinity, maxHeight: .infinity)
             VStack{
                 VStack(spacing: 8){
                     CText(text: "Score", font: "Bold", size: 22, color: "pWhite", alignment: .center).padding(.bottom, 2)
@@ -82,7 +88,7 @@ struct GamePage: View {
                     HStack(alignment: .center){
                         GeometryReader(){ reader in
                             let timerWidth = CGFloat(gameConfig.timeRemaining / gameConfig.timeLimitInSeconds * reader.size.width)
-                            
+
                             ZStack(alignment: .trailing){
                                 RoundedRectangle(cornerRadius: 10).stroke(Color.white, lineWidth: 1.5)
                                 RoundedRectangle(cornerRadius: 10).fill(Color(.white)).frame(width: timerWidth, height: 6)
@@ -102,7 +108,7 @@ struct GamePage: View {
                                     HStack(spacing: 8){
                                         ForEach(0..<6){index in
                                             let color = gameConfig.drawColors[index]
-                                            
+
                                             Button(action: {
                                                 currentDrawColor = color
                                             }, label: {
@@ -122,7 +128,7 @@ struct GamePage: View {
                                     HStack{
                                         let pencilIndicatorWidth: CGFloat = currentTool == "pencil" ? 25: 0
                                         let eraserIndicatorWidth: CGFloat = currentTool == "eraser" ? 25: 0
-                                        
+
                                         VStack{
                                             Button(action: {
                                                 currentTool = "pencil"
@@ -132,29 +138,28 @@ struct GamePage: View {
                                             Spacer()
                                             RoundedRectangle(cornerRadius: 10).fill(Color.white).frame(width: pencilIndicatorWidth, height: 3).animation(Animation.timingCurve(0.09, 0.66, 0.26, 0.88, duration: 0.3), value: pencilIndicatorWidth)
                                         }.frame(height: 42).padding(.trailing, 6)
-                                        
+
                                         VStack{
                                             Button(action: {
                                                 currentTool = "eraser"
                                             }, label: {
                                                 Image("eraser")
                                             })
-                                            
+
                                             Spacer()
                                             RoundedRectangle(cornerRadius: 10).fill(Color.white).frame(width: eraserIndicatorWidth, height: 3).animation(Animation.timingCurve(0.09, 0.66, 0.26, 0.88, duration: 0.3), value: eraserIndicatorWidth)
                                         }.frame(height: 42)
-                                        
+
                                     }
                                 }
                             }
                         }else{
                             //Render guess bottom controls
                             VStack(spacing: 0){
-                                
+
                             }
                         }
                     }
-                    
                 }.padding().frame(maxWidth: .infinity).background(BackgroundGradient).cornerRadius(12)
             }.frame(maxWidth: .infinity, maxHeight: .infinity).padding(.top, 60).padding(.bottom, 30).padding(.leading, 30).padding(.trailing, 30)
         }
@@ -171,6 +176,83 @@ struct GamePage: View {
             Spacer()
         }.ignoresSafeArea()
     }
+}
+
+
+
+
+struct ARViewContainer: UIViewRepresentable {
+    
+    let arView = ARView(frame: .zero)
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(arView: arView)
+    }
+    
+    func makeUIView(context: Context) -> ARView {
+        print("Making UIView...")
+        arView.addGestureRecognizer(
+            UITapGestureRecognizer(
+                target: context.coordinator,
+                action: #selector(Coordinator.handleTap)
+            )
+        )
+        
+        arView.session.delegate = context.coordinator
+        
+        return arView
+    }
+    func updateUIView(_ uiView: ARView, context: Context) {}
+    
+    class Coordinator: NSObject, ARSessionDelegate {
+        
+        let arView: ARView!
+        var focusEntity: FocusEntity?
+        
+        init(arView: ARView){
+            print("Init coordinator")
+            self.arView = arView
+            
+            let anchor = AnchorEntity()
+            let box = ModelEntity(
+                  mesh: MeshResource.generateBox(size: 0.05),
+                  materials: [SimpleMaterial(color: .red, isMetallic: true)]
+                )
+
+            anchor.addChild(box)
+            arView.scene.addAnchor(anchor)
+            box.transform.translation = [0, 0, -1]
+        }
+        
+        
+        func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
+            
+        }
+        
+        func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
+            print(anchors)
+            self.focusEntity = FocusEntity(on: arView, style: .classic(color: .yellow))
+        }
+        
+        
+        @objc func handleTap() {
+            print("Screen tap registred")
+            guard let view = self.arView, let focusEntity = self.focusEntity else { return }
+
+            // Create a new anchor to add content to
+            let anchor = AnchorEntity()
+            view.scene.anchors.append(anchor)
+
+            // Add a Box entity with a blue material
+            let box = MeshResource.generateSphere(radius: 0.01)
+            let material = SimpleMaterial(color: .blue, isMetallic: true)
+            let newEntity = ModelEntity(mesh: box, materials: [material])
+            newEntity.position = focusEntity.position
+
+            anchor.addChild(newEntity)
+        }
+    }
+    
 }
 
 struct GamePage_Previews: PreviewProvider {
