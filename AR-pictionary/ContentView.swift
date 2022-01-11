@@ -26,29 +26,31 @@ struct ContentView: View {
                             CText(text: "Home" , font: "Bold", size: 17, color: "pWhite")
                         }
                     }
-                }
-                Spacer()
-                Button(action: { selectedNavPage = "powerups"}) {
-                    VStack(spacing: 0){
-                        Image("powerup").resizable()
-                            .scaledToFit()
-                            .frame(width: 34, height: 34).padding(.bottom, 5)
-                        if selectedNavPage == "powerups" {
-                            CText(text: "Powerups" , font: "Bold", size: 17, color: "pWhite")
+                    Spacer()
+                    Button(action: { selectedNavPage = "powerups"}) {
+                        VStack(spacing: 0){
+                            Image("powerup").resizable()
+                                .scaledToFit()
+                                .frame(width: 34, height: 34).padding(.bottom, 5)
+                            if selectedNavPage == "powerups" {
+                                CText(text: "Powerups" , font: "Bold", size: 17, color: "pWhite")
+                            }
                         }
                     }
-                }
-                Spacer()
-                Button(action: { selectedNavPage = "account"}) {
-                    VStack(spacing: 0){
-                        Image("person").resizable()
-                            .scaledToFit()
-                            .frame(width: 34, height: 34).padding(.bottom, 5)
-                        if selectedNavPage == "account" {
-                            CText(text: "Account" , font: "Bold", size: 17, color: "pWhite")
+                    Spacer()
+                    Button(action: { selectedNavPage = "account"}) {
+                        VStack(spacing: 0){
+                            Image("person").resizable()
+                                .scaledToFit()
+                                .frame(width: 34, height: 34).padding(.bottom, 5)
+                            if selectedNavPage == "account" {
+                                CText(text: "Account" , font: "Bold", size: 17, color: "pWhite")
+                            }
                         }
+                        
                     }
-                    
+                    Spacer()
+               
                 }
                 Spacer()
             }.padding().cornerRadius(18).background(BackgroundGradient).ignoresSafeArea()

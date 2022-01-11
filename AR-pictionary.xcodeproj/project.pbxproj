@@ -35,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5712C7FA277334E900920EDF /* ArView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArView.swift; sourceTree = "<group>"; };
 		72576E042768D9AE00DDFD4A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		72576E06276A17E200DDFD4A /* GamePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePage.swift; sourceTree = "<group>"; };
 		72576E08276A194F00DDFD4A /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfig.swift; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 				727647F027620CCC004EB186 /* Info.plist */,
 				727647E827620ADC004EB186 /* fonts */,
 				727647DA2762080E004EB186 /* AR_pictionaryApp.swift */,
+				5712C7FA277334E900920EDF /* ArView.swift */,
 				727647DC2762080E004EB186 /* ContentView.swift */,
 				727647DE27620810004EB186 /* Assets.xcassets */,
 				727647E027620810004EB186 /* Preview Content */,
@@ -269,6 +271,7 @@
 				727647DD2762080E004EB186 /* ContentView.swift in Sources */,
 				72D0A63127666CD000301544 /* BackgroundGradient.swift in Sources */,
 				727647DB2762080E004EB186 /* AR_pictionaryApp.swift in Sources */,
+				5712C7FB277334E900920EDF /* ArView.swift in Sources */,
 				72D0A63627668F7700301544 /* Powerup.swift in Sources */,
 				72576E052768D9AE00DDFD4A /* User.swift in Sources */,
 				7271776F27626718007AAC4E /* PageHeader.swift in Sources */,
@@ -499,7 +502,7 @@
 		};
 /* End XCRemoteSwiftPackageReference section */
 
-/* Begin XCSwiftPackageProductDependency section */
+/* Begin XCSwiftPackageProductDependency section 
 		72F387F02770E5AE00CCC44F /* SocketIO */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 72F387EF2770E5AE00CCC44F /* XCRemoteSwiftPackageReference "socket" */;
