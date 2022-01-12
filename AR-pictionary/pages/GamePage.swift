@@ -9,7 +9,6 @@ let manager = SocketManager(socketURL: URL(string: "http://192.168.178.149:80")!
 let socket = manager.defaultSocket
 let ArContainerView = ARViewContainer()
 
-
 struct GamePage: View {
     @ObservedObject var user: User
     @ObservedObject var gameConfig: GameConfig = GameConfig()
@@ -208,20 +207,20 @@ struct ARViewContainer: UIViewRepresentable {
         
         let arView: ARView!
         var focusEntity: FocusEntity?
+        let jsonEncoder = JSONEncoder()
         
         init(arView: ARView){
-            print("Init coordinator")
             self.arView = arView
             
-            let anchor = AnchorEntity()
-            let box = ModelEntity(
-                  mesh: MeshResource.generateBox(size: 0.05),
-                  materials: [SimpleMaterial(color: .red, isMetallic: true)]
-                )
-
-            anchor.addChild(box)
-            arView.scene.addAnchor(anchor)
-            box.transform.translation = [0, 0, -1]
+//            let anchor = AnchorEntity()
+//            let box = ModelEntity(
+//                  mesh: MeshResource.generateBox(size: 0.05),
+//                  materials: [SimpleMaterial(color: .red, isMetallic: true)]
+//                )
+//
+//            anchor.addChild(box)
+//            arView.scene.addAnchor(anchor)
+//            box.transform.translation = [0, 0, -1]
         }
         
         
@@ -236,7 +235,6 @@ struct ARViewContainer: UIViewRepresentable {
         
         
         @objc func handleTap() {
-            print("Screen tap registred")
             guard let view = self.arView, let focusEntity = self.focusEntity else { return }
 
             // Create a new anchor to add content to
@@ -248,6 +246,11 @@ struct ARViewContainer: UIViewRepresentable {
             let material = SimpleMaterial(color: .blue, isMetallic: true)
             let newEntity = ModelEntity(mesh: box, materials: [material])
             newEntity.position = focusEntity.position
+            
+            let anchorPoint = AnchorPoint(x: newEntity.position.x, y: newEntity.position.y, z: newEntity.position.z)
+            let jsonData = try! jsonEncoder.encode(anchorPoint)
+            let json = String(data: jsonData, encoding: .utf8)
+            socket.emit("new_anchor", [json])
 
             anchor.addChild(newEntity)
         }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5773EEA5278D9431008E0FF2 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 5773EEA4278D9431008E0FF2 /* SocketIO */; };
 		5773EEA8278DA9CD008E0FF2 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 5773EEA7278DA9CD008E0FF2 /* FocusEntity */; };
+		57FB6C36278ED90600C831F4 /* AnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FB6C35278ED90600C831F4 /* AnchorPoint.swift */; };
 		720AE7FD276E605200D512F7 /* NexaBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 727647EC27620B2F004EB186 /* NexaBlack.otf */; };
 		720AE7FE276E605200D512F7 /* NexaBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 727647EA27620B2F004EB186 /* NexaBold.otf */; };
 		720AE7FF276E605200D512F7 /* NexaBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = 727647ED27620B2F004EB186 /* NexaBook.otf */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57FB6C35278ED90600C831F4 /* AnchorPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorPoint.swift; sourceTree = "<group>"; };
 		72576E042768D9AE00DDFD4A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		72576E06276A17E200DDFD4A /* GamePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePage.swift; sourceTree = "<group>"; };
 		72576E08276A194F00DDFD4A /* GameConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfig.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				72D0A63527668F7700301544 /* Powerup.swift */,
 				72576E042768D9AE00DDFD4A /* User.swift */,
 				72576E08276A194F00DDFD4A /* GameConfig.swift */,
+				57FB6C35278ED90600C831F4 /* AnchorPoint.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				727647F3276231C7004EB186 /* HomePage.swift in Sources */,
+				57FB6C36278ED90600C831F4 /* AnchorPoint.swift in Sources */,
 				72D0A63327666E4F00301544 /* PowerupBuyCard.swift in Sources */,
 				72576E0B276A24F100DDFD4A /* CButton.swift in Sources */,
 				72576E07276A17E200DDFD4A /* GamePage.swift in Sources */,
