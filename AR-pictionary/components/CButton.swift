@@ -14,6 +14,7 @@ struct CButton: View {
     
     var body: some View {
         Button(action: {
+            callback()
         }, label: {
             Spacer()
             CText(text: label , font: "Bold", size: 18, color: "pWhite")

@@ -5,21 +5,24 @@ import ARKit
 import FocusEntity
 
 
-let manager = SocketManager(socketURL: URL(string: "http://192.168.178.149:80")!, config: [.log(false), .compress])
+let manager = SocketManager(socketURL: URL(string: "http://192.168.178.61:1080")!, config: [.log(false), .compress])
 let socket = manager.defaultSocket
 let ArContainerView = ARViewContainer()
 
 
 struct GamePage: View {
     @ObservedObject var user: User
+    @Binding var currentNav: String
     @ObservedObject var gameConfig: GameConfig = GameConfig()
     @State var started: Bool = false
     @State var currentDrawColor: Color = Color.black
     @State var currentTool: String = "pencil"
     let decoder = JSONDecoder()
     
-    init(user: User){
+    
+    init(user: User, currentNav: Binding<String>){
         self.user = user
+        self._currentNav = currentNav
         initSocketEvents()
     }
     
@@ -49,7 +52,8 @@ struct GamePage: View {
         }
         
         socket.on("game_deleted") { data, ack in
-            cancelGame()
+            print("Player disconnected or leaved. Routing back to home")
+            currentNav = "home"
         }
         
         socket.connect()
@@ -60,20 +64,14 @@ struct GamePage: View {
             CText(text: "Zoeken naar een tegenstander...", font: "Bold", size: 32, color: "pOrange", alignment: .center).lineSpacing(8).padding(.bottom, 30).frame(width: 300)
             CButton(callback: {
                 //Remove user from game  queue in backend and route back to HomePage
-                print("Custom Button Clicked")
+                currentNav = "home"
             }, label: "Annuleren", width: 250)
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
-    func cancelGame(){
-        //TODO - route back to main screen/home
-        print("Player disconnected or leaved. Routing back to home")
-    }
-    
     func renderGameScreen() -> some View{
         return ZStack{
-            //VStack for ARView replacement for testing purposes
             VStack{
                 ArContainerView
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -178,11 +176,7 @@ struct GamePage: View {
     }
 }
 
-
-
-
 struct ARViewContainer: UIViewRepresentable {
-    
     let arView = ARView(frame: .zero)
     
     func makeCoordinator() -> Coordinator {
@@ -202,6 +196,7 @@ struct ARViewContainer: UIViewRepresentable {
         
         return arView
     }
+    
     func updateUIView(_ uiView: ARView, context: Context) {}
     
     class Coordinator: NSObject, ARSessionDelegate {
@@ -224,7 +219,6 @@ struct ARViewContainer: UIViewRepresentable {
             box.transform.translation = [0, 0, -1]
         }
         
-        
         func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
             
         }
@@ -233,7 +227,6 @@ struct ARViewContainer: UIViewRepresentable {
             print(anchors)
             self.focusEntity = FocusEntity(on: arView, style: .classic(color: .yellow))
         }
-        
         
         @objc func handleTap() {
             print("Screen tap registred")
@@ -247,17 +240,16 @@ struct ARViewContainer: UIViewRepresentable {
             let box = MeshResource.generateSphere(radius: 0.01)
             let material = SimpleMaterial(color: .blue, isMetallic: true)
             let newEntity = ModelEntity(mesh: box, materials: [material])
-            newEntity.position = focusEntity.position
+            //newEntity.position = focusEntity.position
 
             anchor.addChild(newEntity)
         }
     }
-    
 }
 
-struct GamePage_Previews: PreviewProvider {
-    static var user = User(name: "Dary", amountOfCoins: 136, currentLevel: 23, currentXp: 272)
-    static var previews: some View {
-        GamePage(user: user)
-    }
-}
+//struct GamePage_Previews: PreviewProvider {
+//    static var user = User(name: "Dary", amountOfCoins: 136, currentLevel: 23, currentXp: 272)
+//    static var previews: some View {
+//        GamePage(user: user)
+//    }
+//}

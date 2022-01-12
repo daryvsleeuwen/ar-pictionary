@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PageHeader: View {
-    @EnvironmentObject var user: User
+    @ObservedObject var user: User
     
     var body: some View {
         HStack{
@@ -24,10 +24,10 @@ struct PageHeader: View {
     }
 }
 
-struct PageHeader_Previews: PreviewProvider {
-    static var previews: some View {
-        PageHeader()
-    }
-}
+//struct PageHeader_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PageHeader()
+//    }
+//}
 
 
