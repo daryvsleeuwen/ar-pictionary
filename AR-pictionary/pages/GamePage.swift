@@ -238,7 +238,7 @@ struct ARViewContainer: UIViewRepresentable {
             let box = MeshResource.generateSphere(radius: 0.01)
             let material = SimpleMaterial(color: .blue, isMetallic: true)
             let newEntity = ModelEntity(mesh: box, materials: [material])
-            newEntity.position = focusEntity.position
+            //newEntity.position = focusEntity.position
             
             let anchorPoint = AnchorPoint(x: newEntity.position.x, y: newEntity.position.y, z: newEntity.position.z)
             let jsonData = try! jsonEncoder.encode(anchorPoint)

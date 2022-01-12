@@ -13,13 +13,14 @@ struct PowerupBuyCard: View {
             padding = 20
         }
     }
- 
+    
     var body: some View {
         GeometryReader { reader in
             VStack{
                 VStack(alignment: .center, spacing: 0){
-                    Image(powerupData.icon).padding(.bottom, 15).padding(.trailing, padding)
-                    CText(text: powerupData.name, font: "Bold", size: 15, color: "pBlack", alignment: .center).fixedSize(horizontal: false, vertical: true).padding(.leading, 14).padding(.trailing, 15)
+                    Image(powerupData.icon).resizable().scaledToFit()
+                        .frame(width: 50, height: 50).padding(.bottom, 10).padding(.trailing, padding)
+                    CText(text: powerupData.name, font: "Bold", size: 14, color: "pBlack", alignment: .center).fixedSize(horizontal: false, vertical: true).padding(.leading, 14).padding(.trailing, 15)
                 }.frame(maxHeight: .infinity)
                 Spacer()
                 Button(action: {
@@ -33,7 +34,7 @@ struct PowerupBuyCard: View {
                     HStack(spacing: 0){
                         CText(text: String(powerupData.cost), font: "XBold", size: 18, color: "pWhite").padding(.top, 5).padding(.trailing, 5)
                         Image("add_circle").resizable().frame(width: 20, height: 20)
-                    }.frame(maxWidth:  .infinity, maxHeight: 48)
+                    }.frame(maxWidth:  .infinity, maxHeight: 42)
                     
                     
                 }).background(BackgroundGradient).cornerRadius(12)
