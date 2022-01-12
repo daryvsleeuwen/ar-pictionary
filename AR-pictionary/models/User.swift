@@ -1,8 +1,8 @@
 import Foundation
 
 class User: ObservableObject {
-    var id: UUID
-    var name: String = ""
+    @Published var id: UUID
+    @Published var name: String = ""
     @Published var amountOfCoins: Int = 0
     @Published var currentLevel: Int = 0
     @Published var currentXp: Int = 0

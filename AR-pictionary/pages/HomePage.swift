@@ -1,13 +1,15 @@
 import SwiftUI
 
 struct HomePage: View {
-    @EnvironmentObject var user: User
+    @ObservedObject var user: User
+    @Binding var currentNav: String
+    
     private let neededXPForLevelUp: Int = 400
     private let DailyChallenges: [DailyChallenge] = DailyChallenge.dummyData
     
     var body: some View {
         VStack(alignment: .leading){
-            PageHeader()
+            PageHeader(user: user)
             VStack{
                 CText(text: "Je bent bijna level 24!" , font: "XBold", size: 22, color: "pWhite").padding(.bottom, 15)
                 Circle()
@@ -23,7 +25,7 @@ struct HomePage: View {
                 
                
                     Button(action: {
-                        //TODO: route to new game screen
+                        currentNav = "game"
                     }, label: {
                         Spacer()
                         CText(text: "Start een nieuwe game" , font: "Bold", size: 18, color: "pBlack")
@@ -62,8 +64,8 @@ struct HomePage: View {
     }
 }
 
-struct HomePage_Previews: PreviewProvider {
-    static var previews: some View {
-        HomePage()
-    }
-}
+//struct HomePage_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomePage()
+//    }
+//}

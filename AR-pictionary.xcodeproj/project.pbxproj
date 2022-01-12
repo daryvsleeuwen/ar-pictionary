@@ -23,7 +23,7 @@
 		72576E0B276A24F100DDFD4A /* CButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72576E0A276A24F100DDFD4A /* CButton.swift */; };
 		7271776F27626718007AAC4E /* PageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7271776E27626718007AAC4E /* PageHeader.swift */; };
 		7271777127628378007AAC4E /* DailyChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7271777027628378007AAC4E /* DailyChallenge.swift */; };
-		727647DB2762080E004EB186 /* AR_pictionaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727647DA2762080E004EB186 /* AR_pictionaryApp.swift */; };
+		727647DB2762080E004EB186 /* Pictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727647DA2762080E004EB186 /* Pictionary.swift */; };
 		727647DD2762080E004EB186 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727647DC2762080E004EB186 /* ContentView.swift */; };
 		727647DF27620810004EB186 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 727647DE27620810004EB186 /* Assets.xcassets */; };
 		727647E227620810004EB186 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 727647E127620810004EB186 /* Preview Assets.xcassets */; };
@@ -45,7 +45,7 @@
 		7271776E27626718007AAC4E /* PageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageHeader.swift; sourceTree = "<group>"; };
 		7271777027628378007AAC4E /* DailyChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyChallenge.swift; sourceTree = "<group>"; };
 		727647D72762080E004EB186 /* AR-pictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR-pictionary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		727647DA2762080E004EB186 /* AR_pictionaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR_pictionaryApp.swift; sourceTree = "<group>"; };
+		727647DA2762080E004EB186 /* Pictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pictionary.swift; sourceTree = "<group>"; };
 		727647DC2762080E004EB186 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		727647DE27620810004EB186 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		727647E127620810004EB186 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 				727647F1276231B2004EB186 /* pages */,
 				727647F027620CCC004EB186 /* Info.plist */,
 				727647E827620ADC004EB186 /* fonts */,
-				727647DA2762080E004EB186 /* AR_pictionaryApp.swift */,
+				727647DA2762080E004EB186 /* Pictionary.swift */,
 				727647DC2762080E004EB186 /* ContentView.swift */,
 				727647DE27620810004EB186 /* Assets.xcassets */,
 				727647E027620810004EB186 /* Preview Content */,
@@ -268,7 +268,7 @@
 				72576E07276A17E200DDFD4A /* GamePage.swift in Sources */,
 				727647DD2762080E004EB186 /* ContentView.swift in Sources */,
 				72D0A63127666CD000301544 /* BackgroundGradient.swift in Sources */,
-				727647DB2762080E004EB186 /* AR_pictionaryApp.swift in Sources */,
+				727647DB2762080E004EB186 /* Pictionary.swift in Sources */,
 				72D0A63627668F7700301544 /* Powerup.swift in Sources */,
 				72576E052768D9AE00DDFD4A /* User.swift in Sources */,
 				7271776F27626718007AAC4E /* PageHeader.swift in Sources */,

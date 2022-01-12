@@ -2,11 +2,12 @@ import SwiftUI
 
 struct PowerupBuyCard: View {
     @ObservedObject var powerupData: Powerup
-    @EnvironmentObject var user: User
+    @ObservedObject var user: User
     var padding: CGFloat = 0
     
-    init(powerupData: Powerup){
+    init(powerupData: Powerup, user: User){
         self.powerupData = powerupData
+        self.user = user
         
         if (powerupData.icon == "time_increase_buy" || powerupData.icon == "time_decrease_buy") {
             padding = 20
